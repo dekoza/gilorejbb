@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+
+{% block title %}
+        Witojcież! - {{ title }}
+{% endblock %}
+    
+{% block content %}
+        <b>Ahoj</b> przygodo! (jedziemy z szablonu)
+        <p>{{ liczba }}</p>
+        <p>{{ napis }}</p>
+        <p>
+            <ul>{% for elem in lista %}
+                <li>{{ elem }}</li>
+            {% endfor %}</ul>
+        </p>
+{% endblock %}

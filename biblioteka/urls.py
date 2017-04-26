@@ -16,6 +16,10 @@ Including another URLconf
 from django.conf.urls import url
 from django.contrib import admin
 
+from katalog.views import index as katalog_index
+
+
 urlpatterns = [
+    url(r'^$', katalog_index),
     url(r'^admin/', admin.site.urls),
 ]
