@@ -6,12 +6,15 @@
 {% endblock %}
     
 {% block content %}
-        <b>Ahoj</b> przygodo! (jedziemy z szablonu)
-        <p>{{ liczba }}</p>
-        <p>{{ napis }}</p>
-        <p>
-            <ul>{% for elem in lista %}
-                <li>{{ elem }}</li>
-            {% endfor %}</ul>
-        </p>
+    {% if show_form %}
+        <form action="" method="post">{% csrf_token %}
+        <label for="nazwisko">Nazwisko autora</label>
+        <input type="text" name="nazwisko">
+        <input type="submit" value="Wyślij">
+        </form>
+    {% else %}
+        <ul>{% for wynik in wyniki %}
+            <li>{{ wynik.title }}</li>
+        {% endfor %}</ul>
+    {% endif %}
 {% endblock %}
