@@ -4,6 +4,9 @@ class Author(models.Model):
     "Autor"
     first_name = models.CharField(max_length=20)
     last_name = models.CharField(max_length=20)
+
+    class Meta:
+        ordering = ['last_name', 'first_name']
     
     def __str__(self):
         return "{first_name} {last_name}".format(first_name=self.first_name,
