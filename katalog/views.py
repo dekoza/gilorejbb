@@ -1,8 +1,17 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from django import forms
 from .models import Book
 
 # Create your views here.
+
+
+class TestForm(forms.Form):
+    nazwisko = forms.CharField()
+    
+
+ 
+
 
 
 def index(request):
