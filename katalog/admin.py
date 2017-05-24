@@ -26,15 +26,13 @@ class ItemAdmin(admin.ModelAdmin):
     list_display = ('book', 'publisher', 'pub_date')
     list_filter = ('pub_date', )
     date_hierarchy = 'pub_date'
-    
+
+
 class PublisherAdmin(admin.ModelAdmin):
     inlines = (ItemInline, )
     
-
-
 
 admin.site.register(Author, AuthorAdmin)
 admin.site.register(Book, BookAdmin)
 admin.site.register(Publisher, PublisherAdmin)
 admin.site.register(Item, ItemAdmin)
-

@@ -15,6 +15,7 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
+from katalog.views import AuthorList, AuthorDetail
 
 from katalog.views import index as katalog_index
 
@@ -22,4 +23,8 @@ from katalog.views import index as katalog_index
 urlpatterns = [
     url(r'^$', katalog_index),
     url(r'^admin/', admin.site.urls),
+    url(r'^autorzy/$', AuthorList.as_view(),
+        name="authors-list"),
+    url(r'autorzy/(?P<pk>\d+)/$', AuthorDetail.as_view(),
+        name="author-detail")
 ]
